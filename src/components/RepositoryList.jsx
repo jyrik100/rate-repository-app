@@ -69,9 +69,9 @@ const styles = StyleSheet.create({
 //       title: 'Third Item',
 //     },
 //   ];
-   const Item = ({ fullName, id }) => (
-    <View style={styles.item}>
-      <Text style={styles.fullName }>this is fullname: {fullName} this is id: {id}</Text>
+   const Item = (props) => (
+    <View>
+      <Text >this is fullname: {props.fullName} this isss id: {props.id}</Text>
     </View>
   );
   

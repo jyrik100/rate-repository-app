@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     },
   });
   
-  /* const repositories = [
+ const repositories = [
     {
       id: 'jaredpalmer.formik',
       fullName: 'jaredpalmer/formik',
@@ -53,39 +53,39 @@ const styles = StyleSheet.create({
       ownerAvatarUrl: 'https://avatars3.githubusercontent.com/u/13142323?v=4',
     },
   ];
-   */
+
   const ItemSeparator = () => <View style={styles.separator} />;
-  const DATA = [
-    {
-      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-      title: 'First Item',
-    },
-    {
-      id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-      title: 'Second Item',
-    },
-    {
-      id: '58694a0f-3da1-471f-bd96-145571e29d72',
-      title: 'Third Item',
-    },
-  ];
-  const Item = ({ title }) => (
+//   const DATA = [
+//     {
+//       id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+//       title: 'First Item',
+//     },
+//     {
+//       id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+//       title: 'Second Item',
+//     },
+//     {
+//       id: '58694a0f-3da1-471f-bd96-145571e29d72',
+//       title: 'Third Item',
+//     },
+//   ];
+   const Item = ({ fullName, id }) => (
     <View style={styles.item}>
-      <Text style={styles.title}>{title}</Text>
+      <Text style={styles.fullName }>this is fullname: {fullName} this is id: {id}</Text>
     </View>
   );
   
   const renderItem = ({ item }) => (
-    <Item title={item.title} />
+    <Item fullName={item.fullName} id ={item.id} />
   );
+ 
 
   const RepositoryList = () => {
     return (
       <FlatList  
-        data={DATA}
+        data={repositories}
         ItemSeparatorComponent={ItemSeparator}
 //        renderItem={RepositoryItem}
-//        keyExtractor={item => item.id}
         renderItem={renderItem}
         keyExtractor={item => item.id}
       />
