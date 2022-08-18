@@ -1,7 +1,11 @@
-import Main from './src/components/Main';
+import Main from './src/Main';
 
 const App = () => {
-  return <Main />;
+
+  const value = "tama on pääasia"
+  return <Main value = {value}/>;
+  
+
 };
 
 export default App;
