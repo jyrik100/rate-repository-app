@@ -1,12 +1,15 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 
-const RepositoryItem = (props) => {
+const Item = (props) => {
 
     return (
-       <View>
-        <Text>{props.fullname}</Text>
-      </View>
+      <View>
+      <Text >this is fullname: {props.fullName} this isss id: {props.id}</Text>
+    </View>
     );
 };
-export default RepositoryItem;
+export default Item;
+
+
+
