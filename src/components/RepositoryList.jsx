@@ -71,7 +71,15 @@ const styles = StyleSheet.create({
 //   ];
   
   const renderItem = ({ item }) => (
-    <Item fullName={item.fullName} id ={item.id} />
+    <Item 
+    fullName={item.fullName} 
+    description ={item.description} 
+    language ={item.language}    
+    stars ={item.stargazersCount}    
+    forks ={item.forksCount}    
+    reviews ={item.reviewCount}
+    rating =  {item.ratingAverage}
+    />
   );
  
 

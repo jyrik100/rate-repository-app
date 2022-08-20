@@ -5,7 +5,27 @@ const Item = (props) => {
 
     return (
       <View>
-      <Text >this is fullname: {props.fullName} this isss id: {props.id}</Text>
+      <Text >
+        Fullname: {props.fullName} 
+     </Text>
+     <Text >
+        Rating: {props.rating} 
+        </Text>
+     <Text >
+        Description: {props.description} 
+        </Text>
+     <Text >
+        Language: {props.language} 
+        </Text>
+     <Text >
+        Stars: {props.stars} 
+        </Text>
+     <Text >
+        Forks: {props.forks} 
+        </Text>
+     <Text >
+        Reviews: {props.reviews} 
+      </Text>
     </View>
     );
 };
