@@ -1,4 +1,4 @@
-import Constants from 'expo-constants';
+//import Constants from 'expo-constants';
 import { Text, StyleSheet, View } from 'react-native';
 import RepositoryList from './components/RepositoryList';
 import List from  './components/list';
