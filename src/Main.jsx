@@ -5,11 +5,16 @@ import List from  './components/list';
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: Constants.statusBarHeight,
-    flexGrow: 1,
-    flexShrink: 1,
+    padding: 20
   },
-});
+
+    text: {    
+    color: 'blue',    
+    fontSize: 15,    
+    fontWeight: '700'  
+  }
+ }
+);
 
 
 /* const List = () => {
@@ -23,7 +28,7 @@ const Main = (props) => {
 
   return (
     <View style={styles.container}>
-      <Text>Rate Repository Application: {props.value}</Text>
+      <Text style={styles.text} >Rate Repository Application: {props.value}</Text>
       <List/>
       <RepositoryList/>
     </View>
