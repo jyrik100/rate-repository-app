@@ -6,41 +6,57 @@ const styles = StyleSheet.create({
      height: 10,
    },
    text: {    
-     color: 'red',    
+     color: 'black',    
      fontSize: 15,    
      fontWeight: '700'  
-   }
+   },
+   blueText: {
+      color: 'blue',
+    },
+    bigText: {
+      fontSize: 24,
+      fontWeight: '700',
+    }
 
  });
 
-
+ const FancyText = ({ isBlue, isBig, children }) => {
+   const textStyles = [
+     styles.text,
+     isBlue && styles.blueText,
+     isBig && styles.bigText,
+   ];
+ 
+   return <Text style={textStyles}>{children}</Text>;
+ };
 
 
 const Item = (props) => {
 
-    return (
+   return (
       <View>
-      <Text style={styles.text}>
+         
+      <FancyText >
         Fullname: {props.fullName} 
-     </Text>
-     <Text >
+     </FancyText>
+     <FancyText >
         Rating: {props.rating} 
-        </Text>
-     <Text >
+        </FancyText>
+     <FancyText isBlue>
         Description: {props.description} 
-        </Text>
-     <Text >
+        </FancyText>
+     <FancyText isBig>
         Language: {props.language} 
-        </Text>
-     <Text >
+        </FancyText>
+     <FancyText >
         Stars: {props.stars} 
-        </Text>
-     <Text >
+        </FancyText>
+     <FancyText >
         Forks: {props.forks} 
-        </Text>
-     <Text >
+        </FancyText>
+     <FancyText >
         Reviews: {props.reviews} 
-      </Text>
+      </FancyText>
     </View>
     );
 };
