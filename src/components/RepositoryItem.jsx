@@ -1,11 +1,26 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {StyleSheet, View, Text} from 'react-native';
+
+const styles = StyleSheet.create({
+   separator: {
+     height: 10,
+   },
+   text: {    
+     color: 'red',    
+     fontSize: 15,    
+     fontWeight: '700'  
+   }
+
+ });
+
+
+
 
 const Item = (props) => {
 
     return (
       <View>
-      <Text >
+      <Text style={styles.text}>
         Fullname: {props.fullName} 
      </Text>
      <Text >

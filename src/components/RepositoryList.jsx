@@ -5,7 +5,17 @@ const styles = StyleSheet.create({
     separator: {
       height: 10,
     },
+    text: {    
+      color: 'blue',    
+      fontSize: 15,    
+      fontWeight: '700'  
+    }
+
   });
+
+
+
+
   
  const repositories = [
     {
