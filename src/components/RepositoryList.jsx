@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
 //     },
 //     {
 //       id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-//       title: 'Second Item',
+//       title: 'Second Item,
 //     },
 //     {
 //       id: '58694a0f-3da1-471f-bd96-145571e29d72',
@@ -89,6 +89,7 @@ const styles = StyleSheet.create({
     forks ={item.forksCount}    
     reviews ={item.reviewCount}
     rating =  {item.ratingAverage}
+    ownerAvatarUrl = {item.ownerAvatarUrl}
     />
   );
  

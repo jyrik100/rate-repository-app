@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View, Text, Image} from 'react-native';
+import {StyleSheet, View, Text} from 'react-native';
 
 const styles = StyleSheet.create({
    separator: {
@@ -31,16 +31,10 @@ const styles = StyleSheet.create({
  };
 
 
-
 const Item = (props) => {
-   
+
    return (
       <View>
-      <FancyText >
-      <Image source = {{uri:props.ownerAvatarUrl}}
-   style = {{ width: 200, height: 200 }}
-   />
-         </FancyText>
          
       <FancyText >
         Fullname: {props.fullName} 

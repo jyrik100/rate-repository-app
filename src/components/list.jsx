@@ -2,7 +2,7 @@ import { Text } from 'react-native';
 
 const List = () => {
 
-    return <Text>asaasasdasdasd</Text>
+    return <Text>** This is the List Component**</Text>
   
   }
   
