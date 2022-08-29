@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, View, Text, Image} from 'react-native';
+//import { TouchableWithoutFeedback } from 'react-native-web';
 
 const styles1 = StyleSheet.create({
    container: {
@@ -22,8 +23,13 @@ const styles = StyleSheet.create({
       color: 'blue',
     },
     bigText: {
-      fontSize: 24,
+      fontSize: 20,
       fontWeight: '700',
+      width: 200,
+      hight: 200,
+      color: 'white',
+      backgroundColor: '#0366d6'
+
     },
 
 
@@ -45,29 +51,24 @@ const Item = (props) => {
    
    return (
       <View style={styles1.container}>
-      <FancyText >
+      <FancyText isBlue>
       <Image source = {{uri:props.ownerAvatarUrl}} style = {{ width: 200, height: 200 }}/>
-         </FancyText>
-         
-      <FancyText >
-        Fullname: {props.fullName} 
+        {props.fullName} 
+        {props.description} 
      </FancyText>
-     <FancyText >
-        Rating: {props.rating} 
-        </FancyText>
-     <FancyText isBlue>
-        Description: {props.description} 
-        </FancyText>
      <FancyText isBig>
-        Language: {props.language} 
-        </FancyText>
-     <FancyText >
+        {props.language} 
+      </FancyText>
+      <FancyText >
+        Rating: {props.rating} 
+      </FancyText>
+      <FancyText >
         Stars: {props.stars} 
-        </FancyText>
-     <FancyText >
+      </FancyText>
+      <FancyText >
         Forks: {props.forks} 
-        </FancyText>
-     <FancyText >
+      </FancyText>
+      <FancyText >
         Reviews: {props.reviews} 
       </FancyText>
     </View>
