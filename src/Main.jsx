@@ -7,7 +7,8 @@ import AppBar from './components/AppBar';
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20
+    padding: 20,
+    backgroundColor:'#e1e4e8',
   },
 
     text: {    // this defines the first row

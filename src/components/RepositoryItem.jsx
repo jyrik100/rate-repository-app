@@ -1,6 +1,14 @@
 import React from 'react';
 import {StyleSheet, View, Text, Image} from 'react-native';
 
+const styles1 = StyleSheet.create({
+   container: {
+     backgroundColor: 'white',
+     
+   },
+   // ...
+ });
+ 
 const styles = StyleSheet.create({
    separator: {
      height: 10,
@@ -16,7 +24,8 @@ const styles = StyleSheet.create({
     bigText: {
       fontSize: 24,
       fontWeight: '700',
-    }
+    },
+
 
  });
 
@@ -35,11 +44,9 @@ const styles = StyleSheet.create({
 const Item = (props) => {
    
    return (
-      <View>
+      <View style={styles1.container}>
       <FancyText >
-      <Image source = {{uri:props.ownerAvatarUrl}}
-   style = {{ width: 200, height: 200 }}
-   />
+      <Image source = {{uri:props.ownerAvatarUrl}} style = {{ width: 200, height: 200 }}/>
          </FancyText>
          
       <FancyText >
