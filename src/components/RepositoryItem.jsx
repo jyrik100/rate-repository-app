@@ -5,7 +5,6 @@ import {StyleSheet, View, Text, Image} from 'react-native';
 const styles1 = StyleSheet.create({
    container: {
      backgroundColor: 'white',
-     
    },
    // ...
  });
@@ -20,16 +19,20 @@ const styles = StyleSheet.create({
      fontWeight: '700'  
    },
    blueText: {
-      color: 'blue',
+      color: 'grey',
     },
     bigText: {
+      justifyContent: 'center',
       fontSize: 20,
-      fontWeight: '700',
-      width: 200,
-      hight: 200,
+      fontWeight: '400',
+      width: 150,
+      hight: 250,
       color: 'white',
-      backgroundColor: '#0366d6'
-
+      backgroundColor: '#0366d6',
+      borderRadius: 5,
+      marginLeft:40,
+      padding: 5
+    
     },
 
 
@@ -51,24 +54,24 @@ const Item = (props) => {
    
    return (
       <View style={styles1.container}>
-      <FancyText isBlue>
-      <Image source = {{uri:props.ownerAvatarUrl}} style = {{ width: 200, height: 200 }}/>
-        {props.fullName} 
-        {props.description} 
-     </FancyText>
-     <FancyText isBig>
+      <FancyText isBlue> 
+         <Image source = {{uri:props.ownerAvatarUrl}} style = {{ width: 150, height: 150, float:  'left' } } />
+         <Text style = {{ float:  'left' } }>
+         <ul>
+         <div style= {{color: 'black'}}>{props.fullName}</div>
+            <div>{props.description}</div>
+        </ul>
+        <FancyText isBig>
         {props.language} 
       </FancyText>
+            
+            
+         </Text>
+     </FancyText>
       <FancyText >
         Rating: {props.rating} 
-      </FancyText>
-      <FancyText >
         Stars: {props.stars} 
-      </FancyText>
-      <FancyText >
         Forks: {props.forks} 
-      </FancyText>
-      <FancyText >
         Reviews: {props.reviews} 
       </FancyText>
     </View>

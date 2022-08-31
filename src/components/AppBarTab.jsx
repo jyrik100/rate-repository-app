@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
 
 const AppBarTab = () => {
   return <View style={styles.container}>
-    <Pressable>Repositoriesasdas</Pressable>
+    <Pressable>Repositories</Pressable>
   </View>;
 };
 
