@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
       description: 'Build forms in React, without the tears',
       language: 'TypeScript',
       forksCount: 1589,
-      stargazersCount: 21553,
+      stargazersCount: 2,
       ratingAverage: 88,
       reviewCount: 4,
       ownerAvatarUrl: 'https://avatars2.githubusercontent.com/u/4060187?v=4',

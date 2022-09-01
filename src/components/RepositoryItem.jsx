@@ -48,6 +48,16 @@ const styles = StyleSheet.create({
    return <Text style={textStyles}>{children}</Text>;
  };
 
+const Tonnitus = (value) => {
+  if(value >1000){
+    value = value/1000
+    return Number(value).toFixed(1) +'K' 
+
+  } else return value
+}
+
+
+
 
 
 const Item = (props) => {
@@ -70,8 +80,8 @@ const Item = (props) => {
      </FancyText>
       <FancyText >
         Rating: {props.rating} 
-        Stars: {props.stars} 
-        Forks: {props.forks} 
+        Stars: {Tonnitus(props.stars)}
+        Forks: {Tonnitus(props.forks)} 
         Reviews: {props.reviews} 
       </FancyText>
     </View>
