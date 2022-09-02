@@ -12,11 +12,13 @@ const styles1 = StyleSheet.create({
 const styles = StyleSheet.create({
    separator: {
      height: 10,
-   },
+     
+    },
    text: {    
      color: 'black',    
      fontSize: 15,    
      fontWeight: '700'  
+     
    },
    blueText: {
       color: 'grey',
@@ -35,14 +37,25 @@ const styles = StyleSheet.create({
     
     },
 
+    smallText: {
+      fontSize: 20,
+      fontWeight: '400',
+      width: 1000,
+      hight: 250,
+      marginLeft:150,
+      padding: 5
+    
+    },
+
 
  });
 
- const FancyText = ({ isBlue, isBig, children }) => {
+ const FancyText = ({ isBlue, isBig, isSmall, children }) => {
    const textStyles = [
      styles.text,
      isBlue && styles.blueText,
      isBig && styles.bigText,
+     isSmall && styles.smallText
    ];
  
    return <Text style={textStyles}>{children}</Text>;
@@ -51,7 +64,7 @@ const styles = StyleSheet.create({
 const Tonnitus = (value) => {
   if(value >1000){
     value = value/1000
-    return Number(value).toFixed(1) +'K' 
+    return Number(value).toFixed(1) +'k' 
 
   } else return value
 }
@@ -75,14 +88,27 @@ const Item = (props) => {
         {props.language} 
       </FancyText>
             
-            
          </Text>
      </FancyText>
-      <FancyText >
-        Rating: {props.rating} 
-        Stars: {Tonnitus(props.stars)}
-        Forks: {Tonnitus(props.forks)} 
-        Reviews: {props.reviews} 
+      <FancyText isSmall> 
+      <table>
+      <thead>
+        <tr>
+          <th>{props.rating}</th>
+          <th>{Tonnitus(props.stars)}</th>
+          <th>{Tonnitus(props.forks)}</th>
+          <th>{props.reviews}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Rating</td>
+          <td>Stars</td>
+          <td>Forks</td>
+          <td>Reviews</td>
+        </tr>
+      </tbody>
+        </table>
       </FancyText>
     </View>
     );
