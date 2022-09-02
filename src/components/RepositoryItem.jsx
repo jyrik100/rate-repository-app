@@ -38,9 +38,10 @@ const styles = StyleSheet.create({
     },
 
     smallText: {
+      justifyContent: 'center',
       fontSize: 20,
       fontWeight: '400',
-      width: 1000,
+      width: 100,
       hight: 250,
       marginLeft:150,
       padding: 5
