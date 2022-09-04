@@ -39,13 +39,14 @@ const styles = StyleSheet.create({
 
     smallText: {
       justifyContent: 'center',
-      fontSize: 20,
+      fontSize: 25,
       fontWeight: '400',
       width: 100,
       hight: 250,
       marginLeft:150,
-      padding: 5
-    
+      padding: 5,
+      float:  'left'
+
     },
 
 
@@ -101,12 +102,13 @@ const Item = (props) => {
           <th>{props.reviews}</th>
         </tr>
       </thead>
+      <div></div>
       <tbody>
         <tr>
-          <td>Rating</td>
           <td>Stars</td>
           <td>Forks</td>
           <td>Reviews</td>
+          <td>Rating</td>
         </tr>
       </tbody>
         </table>
