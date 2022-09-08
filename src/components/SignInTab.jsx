@@ -1,8 +1,6 @@
-import { View, StyleSheet } from 'react-native';
+import { Pressable, View, StyleSheet } from 'react-native';
 import Constants from 'expo-constants';
-import AppbarTab from './AppBarTab';
-import SignInTab from './SignInTab';
-
+import { Link } from "react-router-native";
 
 const styles = StyleSheet.create({
   container: {
@@ -16,13 +14,12 @@ const styles = StyleSheet.create({
   },
   // ...
 });
-//<Pressable>Repositories</Pressable>
 
-const AppBar = () => {
+const SignInTab = () => {
   return <View style={styles.container}>
-    <AppbarTab/> 
-    <SignInTab/>
+    <Pressable>SignIn</Pressable>
+
   </View>;
 };
 
-export default AppBar;
+export default SignInTab;
