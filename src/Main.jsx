@@ -1,11 +1,11 @@
 //import Constants from 'expo-constants';
-import { Text, StyleSheet, View } from 'react-native';
 import RepositoryList from './components/RepositoryList';
 import List from  './components/list';
 import Text1 from './components/Text';
 import AppBar from './components/AppBar';
 import SignIn from './components/SignIn';
-import { Link, Route, Routes, Navigate } from 'react-router-native';
+import { Route, Routes, Navigate } from 'react-router-native';
+import { Text, StyleSheet, View } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -37,7 +37,6 @@ const Main = (props) => {
       <Text1 style={{ paddingBottom: 10 }} fontSize='normal'>Text with custom style</Text1>
       <Text1 color="primary" fontSize='normal'>Text with secondary color</Text1>
       <AppBar/>
-      <Link to="/SignIn"><Text>SignIn</Text></Link>
       <Routes>        
         <Route path="/" element={<RepositoryList />} exact />
         <Route path="/SignIn" element={<SignIn />} exact />        

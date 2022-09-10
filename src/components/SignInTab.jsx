@@ -1,6 +1,7 @@
-import { Pressable, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 import Constants from 'expo-constants';
-import { Link } from "react-router-native";
+import { Link } from 'react-router-native';
+
 
 const styles = StyleSheet.create({
   container: {
@@ -17,7 +18,8 @@ const styles = StyleSheet.create({
 
 const SignInTab = () => {
   return <View style={styles.container}>
-    <Pressable>SignIn</Pressable>
+    <Link to="/SignIn"><Text style={{ color: "white" }}>SignsssIn</Text></Link>
+
 
   </View>;
 };

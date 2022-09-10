@@ -20,8 +20,15 @@ const styles = StyleSheet.create({
 
 const AppBar = () => {
   return <View style={styles.container}>
-    <AppbarTab/> 
-    <SignInTab/>
+  <table>
+  <tr>
+    <td><AppbarTab /></td>
+    <td><SignInTab/></td>
+  </tr>
+</table>
+
+     
+    
   </View>;
 };
 
