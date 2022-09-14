@@ -1,4 +1,4 @@
-import { View, StyleSheet } from 'react-native';
+import { ScrollView, View, StyleSheet } from 'react-native';
 import Constants from 'expo-constants';
 import AppbarTab from './AppBarTab';
 import SignInTab from './SignInTab';
@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
 
 const AppBar = () => {
   return <View style={styles.container}>
+    <ScrollView horizontal>{
   <table>
   <tr>
     <td><AppbarTab /></td>
@@ -28,7 +29,7 @@ const AppBar = () => {
 </table>
 
      
-    
+}</ScrollView>
   </View>;
 };
 

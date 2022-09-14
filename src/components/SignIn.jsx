@@ -1,7 +1,16 @@
 import Text from './Text';
+import { View } from 'react-native';
 
 const SignIn = () => {
-  return <Text>The sign in view</Text>;
-};
+  return (
+    <View>
+      <Text>Name</Text>
+      <Text>Password</Text>
+    </View>
+
+  )
+  }
+
+
 
 export default SignIn;
