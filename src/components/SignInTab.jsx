@@ -20,7 +20,6 @@ const SignInTab = () => {
   return <View style={styles.container}>
     <Link to="/SignIn"><Text style={{ color: "white" }}>SignsssIn</Text></Link>
 
-
   </View>;
 };
 
