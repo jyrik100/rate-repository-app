@@ -5,8 +5,8 @@ import FormikTextInput from './FormikTextInput';
 
 
 const initialValues = {
-  mass: '',
-  height: '',
+  mass: '100',
+  height: '1',
 };
 
 
@@ -35,10 +35,10 @@ const BodyMassIndexCalculator = () => {
       console.log(`Your body mass index is: ${getBodyMassIndex(mass, height, add)}`);
     }
 
-    console.log(mass,height)
+    console.log("asdasdasda")
   };
 
-    return (
+  return (
     <Formik initialValues={initialValues} onSubmit={onSubmit}>
       {({ handleSubmit }) => <BodyMassIndexForm onSubmit={handleSubmit} />}
     </Formik>
@@ -52,10 +52,11 @@ const BodyMassIndexForm = ({ onSubmit }) => {
 
   return (
     <View>
-      <FormikTextInput name="mass" placeholder="UserName" />      
-      <FormikTextInput name="height" placeholder="Password" />
+      <FormikTextInput name="mass" placeholder="Weight (kg)" />      
+      <FormikTextInput name="height" placeholder="Height (m)" />
+      <FormikTextInput name="add" placeholder="Add (m)" />
       <Pressable onPress={onSubmit}>
-        <Text>Sign In</Text>
+        <Text>Calculate</Text>
       </Pressable>
     </View>
   );

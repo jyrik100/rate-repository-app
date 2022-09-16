@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
 
 const SignInTab = () => {
   return <View style={styles.container}>
-    <Link to="/SignIn"><Text style={{ color: "white" }}>SignsssIn</Text></Link>
+    <Link to="/SignIn"><Text style={{ color: "white" }}>Sign In</Text></Link>
 
   </View>;
 };
