@@ -2,11 +2,14 @@
 import { Text, TextInput, Pressable, View } from 'react-native';
 import { Formik, useField } from 'formik';
 import FormikTextInput from './FormikTextInput';
+import FancyText from './RepositoryItem';
+
 
 
 const initialValues = {
   mass: '',
   height: '',
+  add:'2'
 };
 
 
@@ -52,10 +55,20 @@ const BodyMassIndexForm = ({ onSubmit }) => {
 
   return (
     <View>
-      <FormikTextInput name="mass" placeholder="UserName" />      
-      <FormikTextInput name="height" placeholder="Password" />
-      <Pressable onPress={onSubmit}>
-        <Text>Sign In</Text>
+      <FormikTextInput   name="mass" placeholder="enter UserName"/>      
+      <FormikTextInput name="height" placeholder="enter Password" />
+      <Pressable  onPress={onSubmit}  style= { {      
+      justifyContent: 'center',
+      fontSize: 200,
+      fontWeight: '400',
+      font: 'yellow',
+      width: 150,
+      hight: 250,
+      backgroundColor: '#0366d6',
+      borderRadius: 4,
+      padding: 5
+      }}>
+        <Text style= { {  color: 'white'  }}  >Sign in</Text>
       </Pressable>
     </View>
   );
