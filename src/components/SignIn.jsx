@@ -37,13 +37,13 @@ const BodyMassIndexCalculator = () => {
     if (!isNaN(mass) && !isNaN(height) && height !== 0) {
       console.log(`Your body mass index is: ${getBodyMassIndex(mass, height, add)}`);
     }
-
     console.log(mass,height)
   };
 
     return (
     <Formik initialValues={initialValues} onSubmit={onSubmit}>
       {({ handleSubmit }) => <BodyMassIndexForm onSubmit={handleSubmit} />}
+
     </Formik>
   );
 };
@@ -55,8 +55,8 @@ const BodyMassIndexForm = ({ onSubmit }) => {
 
   return (
     <View>
-      <FormikTextInput   name="mass" placeholder="enter UserName"/>      
-      <FormikTextInput name="height" placeholder="enter Password" />
+      <FormikTextInput   name="mass" placeholder="Username"/>      
+      <FormikTextInput name="height" placeholder="Password" />
       <Pressable  onPress={onSubmit}  style= { {      
       justifyContent: 'center',
       fontSize: 200,
@@ -66,10 +66,13 @@ const BodyMassIndexForm = ({ onSubmit }) => {
       hight: 250,
       backgroundColor: '#0366d6',
       borderRadius: 4,
-      padding: 5
+      padding: 5,
+      textAlign: 'center',
+
       }}>
         <Text style= { {  color: 'white'  }}  >Sign in</Text>
       </Pressable>
+
     </View>
   );
 
