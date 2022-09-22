@@ -4,7 +4,7 @@ import { StatusBar } from 'expo-status-bar';
 
 const App = () => {
 
-  const value = "tama on pääasias"
+  const value = "tama on pääassias"
   return (
   <>      
   <NativeRouter>        
