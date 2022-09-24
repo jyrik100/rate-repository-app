@@ -7,6 +7,9 @@ import Text from './Text';
 const styles = StyleSheet.create({
   errorText: {
     marginTop: 5,
+    fontSize: 15,
+    color: 'red'
+
   }
 
   , text : {

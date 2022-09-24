@@ -3,6 +3,7 @@ import { Text, TextInput, Pressable, View } from 'react-native';
 import { Formik, useField } from 'formik';
 import FormikTextInput from './FormikTextInput';
 import FancyText from './RepositoryItem';
+import * as yup from 'yup';
 
 
 
@@ -28,6 +29,18 @@ const getBodyMassIndex = (mass, height, add) => {
 };
 
 
+const validationSchema = yup.object().shape({  
+  mass: yup    
+  .number()    
+  .min(2, 'username must have at least two digit')
+  .required('username is required'), 
+  height: yup    
+  .number()    
+  .min(0.5, 'password must be greater or equal to 0.5')    
+  .required('password is required'),}
+  );
+
+
 const BodyMassIndexCalculator = () => {
   const onSubmit = values => {
     const mass = parseFloat(values.mass);
@@ -41,7 +54,7 @@ const BodyMassIndexCalculator = () => {
   };
 
     return (
-    <Formik initialValues={initialValues} onSubmit={onSubmit}>
+    <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
       {({ handleSubmit }) => <BodyMassIndexForm onSubmit={handleSubmit} />}
 
     </Formik>
