@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
 
 
   
- const repositories1 = [
+ const repositories = [
     {
       id: 'jaredpalmer.formik',
       fullName: 'jaredpalmer/formik',
@@ -95,42 +95,7 @@ const styles = StyleSheet.create({
   );
  
 
-
   const RepositoryList = () => {
-    const [repositories, setRepositories] = useState();
-
-    const fetchRepositories = async () => {
-      // Replace the IP address part with your own IP address!
-      const response = await fetch('http://172.31.2.56:5000/api/repositories');
-      const json = await response.json();
-  
-      console.log(json);
-  
-      setRepositories(json);
-    };
-
-    useEffect(() => {
-      fetchRepositories();
-    }, []);
-    const repositoryNodes = repositories
-    ? repositories.edges.map(edge => edge.node)
-    : [];
-
-    return (
-      <FlatList  
-        data={repositoryNodes}
-        ItemSeparatorComponent={ItemSeparator}
-//        renderItem={RepositoryItem}
-        renderItem={renderItem}
-        keyExtractor={item => item.id}
-      />
-    );
-
-  }
-  
-  export default RepositoryList;
-
- /*  const RepositoryList = () => {
     return (
       <FlatList  
         data={repositories}
@@ -140,4 +105,8 @@ const styles = StyleSheet.create({
         keyExtractor={item => item.id}
       />
     );
-  }; */
+  };
+  
+  
+  export default RepositoryList;
+
