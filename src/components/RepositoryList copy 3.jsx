@@ -14,7 +14,20 @@ const styles = StyleSheet.create({
     }
 
   });
+  const MY_QUERY = gql`
 
+  query GetGreeting($language: String!) {
+
+    greeting(language: $language) {
+
+      message
+
+    }
+
+  }
+
+`;
+ 
 
 
   
@@ -81,27 +94,6 @@ const styles = StyleSheet.create({
 //     },
 //   ];
   
-
-const GET_REPOSITORIES = gql`
-query Query {
-  repositories {
-    edges {
-      node {
-        fullName
-        description
-        language
-        stargazersCount
-        forksCount
-        reviewCount
-        ratingAverage
-        ownerAvatarUrl
-      }
-    }
-  }
-}
-`
-
-
   const renderItem = ({ item }) => (
     <Item 
     fullName={item.fullName} 
@@ -122,19 +114,9 @@ query Query {
   }); */
 
   const RepositoryList = () => {
-//    const [repositories, setRepositories] = useState();
+    const [repositories, setRepositories] = useState();
 
-   const { data, error, loading } = useQuery(GET_REPOSITORIES,{
-    fetchPolicy: 'cache-and-network',
-    // Other options
-  });
-
-  console.log(data)
-
-
-   if (loading) return <p>Loading ...</p>
-
-/*     const fetchRepositories = async () => {
+    const fetchRepositories = async () => {
       // Replace the IP address part with your own IP address!
       
       const response = await fetch('http://172.31.2.41:5000/api/repositories');
@@ -145,14 +127,12 @@ query Query {
   
       setRepositories(json);
     };
+
     useEffect(() => {
       fetchRepositories();
     }, []);
- */
-
-
-    const repositoryNodes = data.repositories.edges
-    ? data.repositories.edges.map(edge => edge.node)
+    const repositoryNodes = repositories
+    ? repositories.edges.map(edge => edge.node)
     : [];
 
     return (
