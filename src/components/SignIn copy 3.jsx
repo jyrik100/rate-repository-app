@@ -44,34 +44,17 @@ const validationSchema = yup.object().shape({
 
 
 const BodyMassIndexCalculator = () => {
-
-  const [signIn] = useSignIn()
-
-  
-
-  const onSubmit = async (values) => {
+  const onSubmit = values => {
     const mass = parseFloat(values.mass);
     const height = parseFloat(values.height);
     const add = parseFloat(values.add);
-    
+
     if (!isNaN(mass) && !isNaN(height) && height !== 0) {
       console.log(`Your body mass index is: ${getBodyMassIndex(mass, height, add)}`);
     }
     console.log(mass,height)
-
-    try {
-      const { data } = await signIn();
-      console.log(data);
-      console.log("toinen")
-    } catch (e) {
-      console.log(e);
-    }
+    useSignIn()
   };
-
-
-    console.log("taalla") 
-//    useSignIn()
-//  };
 
     return (
     <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
