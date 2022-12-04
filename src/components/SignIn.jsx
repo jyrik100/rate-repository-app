@@ -61,15 +61,15 @@ const BodyMassIndexCalculator = () => {
 
     try {
       const { data } = await signIn();
+      console.log("Signin Data")
       console.log(data);
-      console.log("toinen")
     } catch (e) {
       console.log(e);
     }
   };
 
 
-    console.log("taalla") 
+    console.log("Signin End") 
 //    useSignIn()
 //  };
 
