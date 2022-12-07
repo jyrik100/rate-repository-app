@@ -1,96 +1,61 @@
-//import Text from './Text';
 import { Text, TextInput, Pressable, View } from 'react-native';
 import { Formik, useField } from 'formik';
 import FormikTextInput from './FormikTextInput';
-import FancyText from './RepositoryItem';
 import * as yup from 'yup';
-import { gql, useQuery } from '@apollo/client';
 import useSignIn from './useSignIn'
 
-
 const initialValues = {
-  mass: '',
-  height: '',
-  add:'2'
+  username: 11,
+  password: 33,
 };
-
  
-const SignIn = () => {
-//  useSignIn()   Mihin tämä laitetaan että ei looppaa
-    
-  return (
-  <BodyMassIndexCalculator>canl</BodyMassIndexCalculator>      
-  )
-  };
-  
+const SignIn = () => {return (<SignInView></SignInView>)}; // return SignInView
 
-
-
-const getBodyMassIndex = (mass, height, add) => {
-  return mass*height*add;
-};
-
-
-const validationSchema = yup.object().shape({  
-  mass: yup    
+const validationSchema = yup.object().shape({   // data valdation
+  username: yup    
   .number()    
   .min(2, 'username must have at least two digit')
   .required('username is required'), 
-  height: yup    
+  password: yup    
   .number()    
   .min(0.5, 'password must be greater or equal to 0.5')    
   .required('password is required'),}
   );
 
 
-const BodyMassIndexCalculator = () => {
-
+const SignInView = () => {  // define SignInView Formik
   const [signIn] = useSignIn()
 
-  
-
   const onSubmit = async (values) => {
-    const mass = parseFloat(values.mass);
-    const height = parseFloat(values.height);
-    const add = parseFloat(values.add);
-    
-    if (!isNaN(mass) && !isNaN(height) && height !== 0) {
-      console.log(`Your body mass index is: ${getBodyMassIndex(mass, height, add)}`);
-    }
-    console.log(mass,height)
+    const username = parseFloat(values.username);
+    const password = parseFloat(values.password);
+     console.log("onSubmit"+ username)
+     console.log("onSubmit"+ password)
 
     try {
-      const { data } = await signIn();
-      console.log("Signin Data")
+      const { data } = await signIn({ username, password })
+      console.log("SignIn result")
       console.log(data);
     } catch (e) {
       console.log(e);
     }
   };
-
-
-    console.log("Signin End") 
-//    useSignIn()
-//  };
-
     return (
     <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
-      {({ handleSubmit }) => <BodyMassIndexForm onSubmit={handleSubmit} />}
+      {({ handleSubmit }) => <EnterUsernamePasswordForm onSubmit={handleSubmit} />}
 
     </Formik>
   );
 };
 
-const BodyMassIndexForm = ({ onSubmit }) => {
-  const [massField, massMeta, massHelpers] = useField('mass');
-  const [heightField, heightMeta, heightHelpers] = useField('height');
-  const [addField, addMeta, addHelpers] = useField('add');
+const EnterUsernamePasswordForm = ({ onSubmit }) => {
+//  const [usernameField, usernameMeta, usernameHelpers] = useField('username');
+//  const [passwordField, passwordMeta, passwordHelpers] = useField('password');
   
-
   return (
     <View>
-      <FormikTextInput   name="mass" placeholder="Username"/>      
-      <FormikTextInput name="height" placeholder="Password" />
+      <FormikTextInput   name="username" placeholder="Username"/>      
+      <FormikTextInput name="password" placeholder="Password" />
       <Pressable  onPress={onSubmit}  style= { {      
       justifyContent: 'center',
       fontSize: 200,
@@ -106,7 +71,6 @@ const BodyMassIndexForm = ({ onSubmit }) => {
       }}>
         <Text style= { {  color: 'white'  }}  >Sign in</Text>
       </Pressable>
-
     </View>
   );
 

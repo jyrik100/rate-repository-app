@@ -74,8 +74,9 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 const useSignIn = () => {
   const [mutate, result] = useMutation(SIGNIN);
 
-  const signIn = async () => {
-    const { data } = await mutate(); // request token based on static password/user
+  const signIn = async ({ username, password }) => {
+      console.log({ username, password })
+      const { data } = await mutate(); // request token based on static password/user
     
     if (data) {
     const value=data.authenticate.accessToken
